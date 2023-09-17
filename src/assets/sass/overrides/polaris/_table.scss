@@ -1,0 +1,38 @@
+.Polaris-IndexTable__LoadingPanel.customed-for-data-table {
+  position: initial !important;
+  box-shadow: none !important;
+}
+
+.Polaris-IndexTable__TableCell {
+  padding-bottom: 1.2rem !important;
+  padding-top: 1.2rem !important;
+  position: initial !important;
+}
+
+.Polaris-DataTable__Cell {
+  padding-bottom: 1.2rem !important;
+  padding-top: 1.2rem !important;
+}
+
+.clickable-table {
+  .Polaris-DataTable__Cell {
+    padding: 0 !important;
+    .clickable-row {
+      cursor: pointer;
+      padding: 1.2rem 1.6rem !important;
+    }
+  }
+  .Polaris-DataTable__Cell--header {
+    padding: 1.2rem 1.6rem !important;
+    &.Polaris-DataTable__Cell--sortable {
+      padding: 0 !important;
+    }
+  }
+}
+
+.Polaris-DataTable__Cell--header {
+  font-weight: bold !important;
+  button {
+    font-weight: bold !important;
+  }
+}

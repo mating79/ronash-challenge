@@ -1,0 +1,27 @@
+.linked-card {
+  .Polaris-Link {
+    text-decoration: none !important;
+    .Polaris-Heading {
+      color: var(--p-action-primary-pressed);
+      font-size: 18px;
+      line-height: 24px;
+    }
+    p {
+      color: #000;
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+  .Polaris-Card {
+    border: 2px solid transparent;
+    @include transition(all 0.4s);
+  }
+  .Polaris-Icon--colorSuccess svg {
+    fill: var(--p-action-primary-pressed);
+  }
+  &:hover {
+    .Polaris-Card {
+      border: 2px solid var(--p-action-primary-pressed);
+    }
+  }
+}

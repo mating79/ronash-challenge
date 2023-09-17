@@ -1,0 +1,13 @@
+.Polaris-Frame {
+  padding-top: 43px;
+}
+
+.Polaris-Frame-ContextualSaveBar__LogoContainer {
+  display: none;
+}
+
+@media screen and (max-width: 576px) {
+  .Polaris-Page {
+    padding: 0 15px !important;
+  }
+}

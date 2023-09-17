@@ -1,0 +1,14 @@
+.coupled-text-fields {
+  .Polaris-InlineError {
+    white-space: nowrap;
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .coupled-text-fields {
+    .Polaris-InlineError {
+      white-space: normal;
+    }
+  }
+}

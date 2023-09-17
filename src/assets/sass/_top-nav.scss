@@ -1,0 +1,119 @@
+.Polaris-TopBar {
+  background-color: #f6f6f7;
+  border-bottom: 1px solid #d9dbde;
+  box-shadow: none;
+  height: 43px;
+}
+
+.top-navigation-items {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15px;
+  width: 100%;
+  & > div {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    .link-wrapper {
+      align-items: center;
+      border-bottom: 2px solid transparent;
+      display: flex;
+      justify-content: center;
+      height: 100%;
+      margin-bottom: -1px;
+      margin-right: 4px;
+      @include transition(all 0.4s);
+      .Polaris-Link {
+        align-items: center;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center;
+        height: 85%;
+        padding: 0 10px;
+        @include transition(all 0.4s);
+      }
+      &.active {
+        border-bottom: 2px solid var(--p-action-primary);
+        .Polaris-Link {
+          background-color: #edeeef;
+          color: var(--p-action-primary);
+        }
+      }
+      &:hover {
+        .Polaris-Link {
+          background-color: #edeeef;
+        }
+      }
+    }
+  }
+}
+
+#main-overlay-modal {
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 100%;
+  opacity: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  visibility: hidden;
+  width: 100%;
+  z-index: 998;
+  @include transition(all 0.4s);
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.toggle-top-nav-icon {
+  display: none;
+  left: 15px;
+  position: absolute;
+  top: 50%;
+  @include transform(translateY(-50%));
+}
+
+@media screen and (max-width: 800px) {
+  .toggle-top-nav-icon {
+    display: block;
+  }
+  .top-navigation-items {
+    background-color: #fff;
+    display: block;
+    height: 100vh;
+    left: -240px;
+    padding: 15px 0;
+    position: fixed;
+    top: 0;
+    width: 240px;
+    z-index: 999;
+    @include transition(all 0.4s);
+    &.active {
+      left: 0;
+    }
+    & > div {
+      display: block;
+      height: initial;
+      margin-bottom: 30px;
+      .link-wrapper {
+        display: block;
+        margin-bottom: 5px;
+        padding-left: 3px;
+        .Polaris-Link {
+          display: block;
+          height: 100%;
+          padding: 10px;
+          width: 95%;
+        }
+        &.active {
+          border-bottom: none;
+          border-left: 2px solid var(--p-action-primary);
+          .Polaris-Link {
+            background-color: #edeeef;
+          }
+        }
+      }
+    }
+  }
+}

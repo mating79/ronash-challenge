@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "es6",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react",
+    "baseUrl": "./",
+    "paths": {
+      "api/*": ["src/api/*"],
+      "@/*": ["src/components/*"],
+      "assets/*": ["src/assets/*"],
+      "images/*": ["src/assets/images/*"],
+      "utils/*": ["src/utils/*"],
+      "states/*": ["src/states/*"],
+      "hooks/*": ["src/hooks/*"],
+      "config/*": ["src/config/*"],
+      "tracking/*": ["src/tracking/*"]
+    }
+  },
+  "exclude": ["node_modules", "dist", "out"]
+}
