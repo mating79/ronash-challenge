@@ -9,8 +9,10 @@ const AddProductsModal = ({ openProductModal, toggleProductModal, products, prod
 
   const toggleProductCheck = useCallback((isChecked, id) => {
     if (isChecked) setSelectedProducts(prev => [...prev, { id }]);
-    else setSelectedProducts(prev => prev.filter(product => product.id !== id));
-    setSelectedProductVariants(prev => prev.filter(variant => variant.productId !== id));
+    else {
+      setSelectedProducts(prev => prev.filter(product => product.id !== id));
+      setSelectedProductVariants(prev => prev.filter(variant => variant.productId !== id));
+    }
   }, []);
 
   const toggleVariantCheck = useCallback(
@@ -37,8 +39,8 @@ const AddProductsModal = ({ openProductModal, toggleProductModal, products, prod
   );
 
   const addProducts = useCallback(() => {
-    console.log('Selected products are: ' + selectedProducts.map(i => i.id));
-    console.log('Selected variants are: ' + selectedProductVariants.map(i => i.id));
+    console.log('Selected products are: ' + selectedProducts.map(product => product.id));
+    console.log('Selected variants are: ' + selectedProductVariants.map(variant => variant.id));
   }, [selectedProducts, selectedProductVariants]);
 
   const selectedProductIds = selectedProducts?.map(product => product?.id);
