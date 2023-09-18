@@ -30,9 +30,7 @@ const AddProductsModal = ({ openProductModal, toggleProductModal, products, prod
 
           setSelectedProductVariants(prev => [...prev, ...returnedVariants]);
           setSelectedProducts(prev => prev.filter(product => product.id !== productId));
-        } else {
-          setSelectedProductVariants(prev => prev.filter(variant => variant.id !== id));
-        }
+        } else setSelectedProductVariants(prev => prev.filter(variant => variant.id !== id));
       }
     },
     [selectedProductVariants]
@@ -66,10 +64,7 @@ const AddProductsModal = ({ openProductModal, toggleProductModal, products, prod
               <Checkbox
                 label={product?.title}
                 labelHidden
-                checked={
-                  selectedProductIds.includes(product.id) ||
-                  (selectedProductVariants.find(variant => variant.productId === product.id) ? true : false)
-                }
+                checked={selectedProductIds.includes(product.id) || selectedProductVariants.some(variant => variant.productId === product.id)}
                 onChange={toggleProductCheck}
                 id={product?.id}
               />
